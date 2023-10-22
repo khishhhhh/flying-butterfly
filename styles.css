@@ -1,0 +1,125 @@
+:root {
+    --body-color: rgb(106, 13, 13);
+    --wing-color: rgb(254, 41, 187);
+    --inner-wing-color: red;
+}
+* {
+    box-sizing: border-box;
+    
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.butterfly {
+    
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    margin-top: 35px;
+    animation: up_down 4s infinite;
+}
+
+.head {
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    height: 10%;
+    width: 10%;
+    border-radius: 50%;
+    background-color: var(--body-color);
+}
+.thoraxes div {
+    position: absolute;
+    height: 12%;
+    width: 20%;
+    border: 2px solid red;
+    border-radius: 50%;
+    border-color: black transparent transparent transparent;
+}
+.left-thorax {
+    left: 30%;
+    top: 12%;
+    transform: rotate(60deg);
+}
+.right-thorax {
+    right: 30%;
+    top: 12%;
+    transform: rotate(-60deg)
+}
+.torso {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    height: 48%;
+    width: 10%;
+    background-color: var(--body-color);
+    border-radius: 30% 30% 50% 50%;
+}
+.wings div {
+    position: absolute;
+    height: 70%;
+    width: 34%;
+    border-radius: 30% 50% 30% 50%;
+    background-color: var(--wing-color);
+    animation: resize 1s infinite;
+}
+.left-wing {
+    top: 10%;
+    right: 56%;
+    transform: rotate(-3deg);
+}
+.right-wing {
+    top: 10%;
+    left: 56%;
+    border-radius: 50% 30% 50% 30% !important;
+    transform: rotate(3deg);
+}
+.inner-wings {
+    position: absolute !important;
+    height:25% !important;
+    width: 50% !important;
+    border-radius: 50% !important;
+    background-color: pink !important;
+    z-index: 1;
+}
+.right-inner-wing {
+    top: 10%;
+    left: 30%;
+    
+}
+.left-inner-wing {
+    top: 10%;
+    right: 30%;
+}
+@keyframes resize {
+    0% {
+      width: 34%; /* Initial width */
+    }
+
+    50% {
+      width: 20%; /* Final width */
+    }
+
+    100% {
+        width: 34%;
+    }
+}
+@keyframes up_down {
+    0% {
+        top: 0%;
+    }
+    50% {
+        top: 20%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+
+
